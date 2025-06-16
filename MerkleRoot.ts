@@ -1,7 +1,7 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  // 获取部署者账号，通常是 Owner
+  // 获取部署者账号 Owner
   const [deployer] = await ethers.getSigners();
   
   // 合约地址（填入你实际的合约地址）
