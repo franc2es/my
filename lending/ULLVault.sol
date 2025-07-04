@@ -15,4 +15,8 @@ contract ULLVault is IULL, Ownable {
     function deposit(address asset, uint256 amount, address from) external override onlyLendingPool {
         require(IERC20(asset).transferFrom(from, address(this), amount), "TransferFrom failed");
     }
+    /// 资产转出
+    function withdraw(address asset, uint256 amount, address to) external override onlyLendingPool {
+        require(IERC20(asset).transfer(to, amount), "Transfer failed");
+    }
 }
